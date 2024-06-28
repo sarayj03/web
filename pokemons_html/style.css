@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital@1&family=Oswald:wght@200&display=swap');
+
+
+h2 {
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-family: Oswald;
+}
+
+#poke-container {
+    display: grid;
+    padding: 10px;
+    gap: 10px 10px;
+}
+
+#pokemon {
+    background-color:gray;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+
+#pokeContent {
+    background-color: rgb(201, 195, 195);
+    padding: 20px;
+    background: rgb(222,222,222);
+    background: radial-gradient(circle, rgba(222,222,222,1) 35%, rgba(166,165,165,1) 100%);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    height: 220px;
+}
+
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    background: rgb(237,222,177);
+    background: radial-gradient(circle, rgba(237,222,177,1) 35%, rgba(198,184,63,1) 100%);
+    border-radius: 10px;
+}
+
+
+#pokeImage {
+    margin-bottom: 10px;
+}
+
+#pokeNumber::before {
+    content:"Code: ";
+    font-weight: bold;
+}
+
+#pokeHeight::before {
+    content: "Height: ";
+    font-weight: bold;
+}
+
+#pokeWeight::before {
+    content: "Weight: ";
+    font-weight: bold;
+}
+
+#pokeWeight::after {
+    content:"kg"
+}
+
+
+#pokeHeight {
+    float: left;
+}
+
+#pokeWeight {
+    float: right;
+}
+
+/* TYPE*/
+ul {
+    padding: 0;
+
+}
+li {
+    display: inline;
+    justify-content: center;
+}
+
+li::after {
+    content:","
+}
+
+li:last-child:after {
+    content:""
+}
+
+ul::before {
+    content:"Type: ";
+    font-weight: bold;
+    text-align: start;
+}
+
+
+
+/**/
+h4::first-letter {
+    text-transform: uppercase;
+}
+
+h4 {
+    font-size: 1.5em;
+    font-family: "Narrow";
+}
+
+@media (max-width: 600px) {
+    #poke-container {
+        grid-template-columns: 100%;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 800px) {
+    #poke-container {
+        grid-template-columns: 50% 50%;
+    }
+}
+
+@media (min-width: 801px) {
+    #poke-container {
+        grid-template-columns: 24% 24% 24% 24%;
+    }
+}
