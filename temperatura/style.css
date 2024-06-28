@@ -1,0 +1,180 @@
+ body {
+    padding: 10px;  
+    margin: 35px; 
+    box-shadow: 0 0 0 35px rgb(103, 181, 253);
+ }
+
+.div {
+    text-align: center;
+    color:rgb(0, 132, 255);
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*tabla*/
+.tabla {
+    width: 98%;
+    border: 1px solid rgb(0, 0, 0);
+    border-spacing: 20px;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tabla td {
+    border: 1px solid #135788; 
+    background-color: rgb(245, 224, 120);
+    border-radius: 5px;
+    width: 50%;
+    padding: 40px;
+}
+
+
+/*contenido de dentro*/
+.div1, .div2 {
+    display: inline-block;
+    margin-bottom: 10px;
+    width: 260px;
+}
+
+label {
+    display: block;
+    margin-bottom: 20px;
+}
+
+select {
+    padding: 5px;
+    width: 260px;
+    height: 35px;
+}
+
+#enter_temp {
+    width: 520px;
+    height: 30px;
+}
+
+button {
+    width: 100px;
+    height: 40px;
+    background-color: rgb(56, 103, 161);
+    color: white;
+}
+
+#resultado {
+    width: 250px;
+    height: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.424);
+    margin-top: -40px;
+    margin-left: 270px;
+    background-color: white;
+    padding-top: 6px;
+    padding-left: 15px;
+}
+
+
+.div3 {
+    margin-top: -140px;
+}
+
+#formula {
+    width: 250px;
+    height: 30px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*tabla fòrmulas*/
+.grid3 {
+    display: grid;
+    padding: 10px;
+    gap: 10px 10px;
+    place-items: center;
+}
+
+
+.tabla3 {
+    width: 30%;
+    border-collapse: separate;
+    border: 2px solid black;
+    border-spacing: 4px;
+    text-align: center;
+}
+
+.tabla3 th, .tabla3 td {
+    border: 2px solid black;
+    padding: 15px;
+}
+
+.tabla3 tr {
+    border-bottom: 1px solid black;
+}
+
+
+
+/* responsive */
+@media screen and (max-width: 600px) {
+    img {
+        width: 400px;
+    }
+
+    .tabla {
+        width: 10%;
+        border-spacing: 15px;
+    }
+    
+    .tabla td {
+        width: 380px;
+        display: block;
+        margin-bottom: 15px;
+        padding: 40px;
+    }
+
+    /*contenido de dentro*/
+    .div1, .div2 {
+        margin-bottom: 10px;
+        width: 100px;
+        text-align: left;
+    }
+
+    .div2 {
+        margin-left: 100px;
+    }
+
+
+    select {
+        width: 200px;
+    }
+
+    #enter_temp {
+        width: 400px;
+        height: 30px;
+    }
+
+    button {
+        width: 100px;
+        height: 40px;
+        background-color: rgb(56, 103, 161);
+        color: white;
+    }
+
+    #resultado {
+        width: 120px;
+    }
+
+
+    .div3 {
+        margin-top: -30px;
+    }
+
+    .tabla3 {
+        width: 100%;
+        font-size: 90%;
+    }
+}

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>activitat9</title>
+</head>
+<body>
+    <div class="div">
+        <h3>Temperature Conversion</h3>
+        <img src="temperatura.png" width="20%"> 
+    </div>
+
+    <br/><br/>
+    <form>
+        <table class="tabla">
+            <tr>
+                <td>
+                    <div class="div1">
+                        <label for="from">From:</label>
+                        <select id="from" name="from">
+                        <option value="Celsius">Celsius</option>
+                        <option value="Fahrenheit">Fahrenheit</option>
+                        <option value="Kelvin">Kelvin</option>
+                        <option value="Rankine">Rankine</option>
+                        </select>
+                    </div>
+                    <div class="div2">
+                        <label for="to">To:</label>
+                        <select id="to" name="to">
+                        <option value="Celsius">Celsius</option>
+                        <option value="Fahrenheit">Fahrenheit</option>
+                        <option value="Kelvin">Kelvin</option>
+                        <option value="Rankine">Rankine</option>
+                        </select>
+                    </div>
+                    <br/><br/>
+
+                    <label for="temperature">Enter Temperature:</label>
+                    <input id="enter_temp" type="number">
+                    <br/><br/><br/>
+                    
+                    <button type="button" onclick="funciones()">CONVERT</button>
+                    <div id="resultado"></div>
+                </td>
+                <td>
+                    <div class="div3">
+                        <h3>Conversion Formulae</h3>
+                        <p>The conversion formulae is as follows:</p>
+                        <div id="formula"></div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+        <br/><br/><br/>
+        <h4>Temperature Convertion Equations</h4>
+        <div class="grid3">
+            <table class="tabla3">
+                <tbody>
+                    <tr>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Formulae</th>
+                    </tr>
+                    <tr>
+                        <td>Celsius</td>
+                        <td>Fahrenheit</td>
+                        <td>F = C * (9/5) + 32</td>
+                    </tr>
+                    <tr>
+                        <td>Celsius</td>
+                        <td>kelvin</td>
+                        <td>K = C + 273.15</td>
+                    </tr>
+                    <tr>
+                        <td>Celsius</td>
+                        <td>Rankine</td>
+                        <td>R = C * (9/5) + 32 + 459.67</td>
+                    </tr>
+                    <tr>
+                        <td>Fahrenheit</td>
+                        <td>Celsius</td>
+                        <td>C = (F - 32) * 5 / 9</td>
+                    </tr>
+                    <tr>
+                        <td>Fahrenheit</td>
+                        <td>kelvin</td>
+                        <td>K = (F - 32) * 5 / 9 + 273.15</td>
+                    </tr>
+                    <tr>
+                        <td>Fahrenheit</td>
+                        <td>Rankine</td>
+                        <td>R = F + 459.67</td>
+                    </tr>
+                    <tr>
+                        <td>Kelvin</td>
+                        <td>Celsius</td>
+                        <td>C = K - 273.15</td>
+                    </tr>
+                    <tr>
+                        <td>Kelvin</td>
+                        <td>Fahrenheit</td>
+                        <td>F = K * (9 / 5) - 459.67</td>
+                    </tr>
+                    <tr>
+                        <td>Kelvin</td>
+                        <td>Rankine</td>
+                        <td>R = K * 9 / 5</td>
+                    </tr>
+                    <tr>
+                        <td>Rankine</td>
+                        <td>Celsius</td>
+                        <td>C = (R - 32 - 459.67) * 9 /5</td>
+                    </tr>
+                    <tr>
+                        <td>Rankine</td>
+                        <td>Fahrenheit</td>
+                        <td>F = R - 459.67</td>
+                    </tr>
+                    <tr>
+                        <td>Rankine</td>
+                        <td>Kelvin</td>
+                        <td>K = R * 5 / 9</td>
+                    </tr>
+                </tbody>
+            </table>
+    </div>
+
+    <script>
+        //funció generica
+        function funciones() {
+            let from = document.getElementById("from").value;
+            let to = document.getElementById("to").value;
+            let enter_temp = document.getElementById("enter_temp").value;
+
+            let resultado;
+            let formula;
+
+            // Celsius
+            if (from == "Celsius" && to == "Fahrenheit") {
+                resultado = celsiusFahrenheit(enter_temp);
+                formula = "F = C * (9/5) + 32";
+
+            } else if (from == "Celsius" && to == "Kelvin") {
+                resultado = celsiusKelvin(enter_temp);
+                formula = "K = C + 273.15";
+
+            } else if (from == "Celsius" && to == "Rankine") {
+                resultado = celsiusRankine(enter_temp);
+                formula = "R = C * (9/5) + 32 + 459.67";
+
+            // Fahrenheit
+            } else if (from == "Fahrenheit" && to == "Celsius") {
+                resultado = fahrenheitCelsius(enter_temp);
+                formula = "C = (F - 32) * 5 / 9";
+            
+            } else if (from == "Fahrenheit" && to == "Kelvin") {
+                resultado = fahrenheitKelvin(enter_temp);
+                formula = "K = (F - 32) * 5 / 9 + 273.15";
+            
+            } else if (from == "Fahrenheit" && to == "Rankine") {
+                resultado = fahrenheitRankine(enter_temp);
+                formula = "R = F + 459.67";
+            
+            // Kelvin
+            } else if (from == "Kelvin" && to == "Celsius") {
+                resultado = kelvinCelsius(enter_temp);
+                formula = "C = K - 273.15";
+            
+            } else if (from == "Kelvin" && to == "Fahrenheit") {
+                resultado = kelvinFahrenheit(enter_temp);
+                formula = "F = K * (9 / 5) - 459.67";
+
+            } else if (from == "Kelvin" && to == "Rankine") {
+                resultado = kelvinRankine(enter_temp);
+                formula = "R = K * 9 / 5";
+            
+            // Rankine
+            } else if (from == "Rankine" && to == "Celsius") {
+                resultado = rankineCelsius(enter_temp);
+                formula = "C = (R - 32 - 459.67) * 9 /5";
+            
+            } else if (from == "Rankine" && to == "Fahrenheit") {
+                resultado = rankineFahrenheit(enter_temp);
+                formula = "F = R - 459.67";
+            
+            } else if (from == "Rankine" && to == "Kelvin") {
+                resultado = rankineKelvin(enter_temp);
+                formula = "K = R * 5 / 9";
+            }
+
+            document.getElementById("resultado").innerHTML = resultado.toFixed(2);
+            document.getElementById("formula").innerHTML = formula;
+        }
+
+        // funció de Celsius a Fahrenheit
+        function celsiusFahrenheit(c) {
+            return +c * (9/5) + 32;
+        }
+
+        //funció de Celsius a Kelvin
+        function celsiusKelvin(c) {
+            return +c + 273.15;
+        }
+
+        //funció de Celsius a Rankine
+        function celsiusRankine(c) {
+             return +c * (9/5) + 32 + 456.67;
+        }
+
+        // funció de Fahrenheit a Celsius 
+        function fahrenheitCelsius(f) {
+            return (+f - 32) * 5 / 9;
+        }
+
+        // funció de Fahrenheit a Kelvin
+        function fahrenheitKelvin(f) {
+            return (+f - 32) * 5 / 9 + 273.15;
+        }
+
+        // funció de Fahrenheit a Rankine
+        function fahrenheitRankine(f) {
+            return +f + 459.67;
+        }
+
+        // funció de Kelvin a Celsius
+        function kelvinCelsius(k) {
+            return +k - 273.15;
+        }
+
+        // funció de Kelvin a Fahrenheit
+        function kelvinFahrenheit(k) {
+            return +k * (9 / 5) - 459.67;
+        }
+
+        // funció de Kelvin a Rankine
+        function kelvinRankine(k) {
+            return +k * 9 / 5;
+        }
+
+        // funció de Rankine a Celsius
+        function rankineCelsius(r) {
+            return (+r - 32 - 459.67) * 9 /5;
+        }
+
+        // funció de Rankine a Fahrenheit
+        function rankineFahrenheit(r) {
+            return +r - 459.67;
+        }
+
+        // funció de Rankine a Fahrenheit
+        function rankineKelvin(r) {
+            return +r * 5 / 9;
+        }
+    </script>
+</body>
+</html>
+
+
