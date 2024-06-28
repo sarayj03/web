@@ -3,6 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&family=Gabriela&family=Katibeh&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Courgette&family=Gabriela&family=Katibeh&family=Neuton:wght@200&family=Old+Standard+TT&display=swap');
 
+body {
+    padding: 20px;
+}
+
 /*Barra de navegació*/
 ul.block1 {
     list-style-type: none;
