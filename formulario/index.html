@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <link rel="stylesheet" href="style.css"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Formulari</title>
+    </head>
+<body>
+    <h1>INSCRIPCIÓ DE GRAU SUPERIOR</h1>
+    <form>
+        <fieldset class="block1">
+            <legend class="dades">Dades Personals</legend>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><label for="nom">Nom:</label></td>
+                            <td><label for="cognom">Cognom:</label></td>
+                            <td class="separacio"><label for="dni">DNI</label></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" name="nom" id="nom" required>           
+                            </td>
+                            <td>
+                                <input type="text" name="cognom" id="cognom" required>
+                            </td>
+                            <td class="separacio">
+                                <input type="text" name="dni" id="dni" pattern="[0-9]{8}[A-HJKM-TV-Za-hjkm-tv-z]" required/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="localitat">Localitat de Naixement</label></td>
+                            <td><label for="provincia">Provincia:</label></td>
+                            <td class="separacio"><label for="data">Data de Naixement</label></td>
+                        </tr>
+                            <td>                              
+                                <input type="text" id="Localitat" name="localitat" required>
+                            </td>
+                            <td>
+                                <select id="provincia" name="provincia">
+                                    <option>--select an option--</option>
+                                    <option>Barcelona</option>
+                                    <option>Sevilla</option>
+                                    <option>València</option>
+                                     <option></option>
+                                </select>
+                            </td>
+                            <td class="separacio">                        
+                                <input type="date" name="data" id="data" min="1900-01-01" max="2023-12-31" required>                          
+                            </td>
+                    </tbody>
+                </table>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><label for="direccio">Direcció</label></td>
+                            <td class="separacio"><label for="codi">Codi Postal:</label></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" size="46" label="direccio" required>                                                     
+                            </td>
+                            <td class="separacio">                             
+                                <input type="text" id="codi" name="codi" pattern="[0-9]{5}" required>                         
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+        </fieldset>
+        <br/><br/>
+        <fieldset class="block2">
+            <legend class="format2">Forma d'Acces</legend>
+            <br/>
+            <ul>
+                <li><input name="extern" type="radio" required>Directe</li>
+                <ul>
+                    <li><input type="radio" name="intern">Batxillerat Modalitat: <input type="text"></label><br /><br/></li>
+                    <li><input type="radio" name="intern">COU opció:<input type="text"></label><br /><br/></li>
+                    <li><input type="radio" name="intern">FP Grau Mig. Cicle:<input type="text"></label><br /><br/></li>
+                    <li><input type="radio" name="intern">FP Grau Superior Cicle:<input type="text"></label><br /><br/></li>
+                    <li><input type="radio" name="intern">Altres (especificar):<input type="text"></label><br /><br/></li>
+                </ul>
+                <li><input name="extern" type="radio" required>Prova Liure</input></li>
+            </ul>
+            <br/>
+        </fieldset>
+        <br/><br/>
+        <fieldset class="block3">
+            <legend class="format3">Documents Adjunts</legend>
+            <br/>
+            <input type="checkbox" name="directa">
+            <label>Fotocopia DNI</label><br /><br/>
+            
+            <input type="checkbox" name="directa">
+            <label for="file">Certificat Acadèmic Selecciona document: 
+                <input type="file" id="file" name="file" required/>
+            <br /><br />
+            <input type="checkbox" name="directa">
+            <label for="file_multiple">Altres documents (especificar) <input type="text" required> 
+                Selecciona document: <input type="file" id="file_multiple" multiple>
+            <br/><br/>
+        </fieldset>
+        <br/>
+        <input class="enviar" type="submit" name="submit" value="ENVIAR SOLICITUD"/>
+    </form>
+</body>
+</html>

@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+h1 {
+    font-family: 'Roboto';
+    text-align: center;
+}
+
+/*block 1*/
+td.separacio {
+    padding-left: 40px;
+}
+
+fieldset.block1 {
+    border: 1px solid;
+    padding: 10px;
+    background-color: rgb(218, 255, 255);
+}
+
+legend {
+    border: 2px solid;
+    height: 40px;
+    width: 150px;
+    background-color: white;
+    text-align: center;
+    align-items: center;
+    display:grid;
+}
+
+ul {
+    list-style-type: none;
+}
+
+select {
+    border: 0px;
+}
+
+/*block 2*/
+fieldset.block2 {
+    border: 1px solid;
+    padding: 10px;
+    background-color:rgb(183, 231, 243);
+}
+
+/*Block 3*/
+fieldset.block3 {
+    border: 1px solid;
+    padding: 10px;
+    background-color:rgb(122, 166, 184);
+}
+
+legend.format3 {
+    border: 2px solid;
+    height: 40px;
+    width: 200px;
+    background-color: white;
+    text-align: center;
+    align-items: center;
+    display:grid;
+}
+
+
+/*final*/
+input.enviar {
+    border: 0px;
+    height: 40px;
+    background-color: rgb(175, 175, 175);
+    color: white;
+}
+
+input[type="file"]::file-selector-button {background-color: rgb(175, 175, 175);}
+
